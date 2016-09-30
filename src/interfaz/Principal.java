@@ -34,7 +34,8 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        txtResultado = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtResultado = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblMatrizResultante = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -64,9 +65,13 @@ public class Principal extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtResultado.setEditable(false);
-        jPanel3.add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 280, 30));
+        txtResultado.setColumns(20);
+        txtResultado.setRows(5);
+        jScrollPane3.setViewportView(txtResultado);
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 380, 70));
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 460, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 490, 130));
 
         tblMatrizResultante.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -204,7 +209,7 @@ public class Principal extends javax.swing.JFrame {
                     aux = 1;
                     try {
                         n = Double.parseDouble(Helper.recibirDatos(this, "Digite el elemento en la posición: " + " (" + i + "," + j + ")"));
-                        tblMatrizInicial.setValueAt(n, i, j);
+                        tblMatrizInicial.setValueAt((int)n, i, j);
                     } catch (NumberFormatException e) {
                         JOptionPane.showMessageDialog(this, "Digite la información correctamente", "Error", JOptionPane.ERROR_MESSAGE);
                         aux = 0;
@@ -387,10 +392,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tblMatrizInicial;
     private javax.swing.JTable tblMatrizResultante;
     private javax.swing.JTextField txtNumeroColumnas;
     private javax.swing.JTextField txtNumeroFilas;
-    private javax.swing.JTextField txtResultado;
+    private javax.swing.JTextArea txtResultado;
     // End of variables declaration//GEN-END:variables
 }
