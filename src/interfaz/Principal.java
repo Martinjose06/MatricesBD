@@ -97,7 +97,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 320, 160));
 
-        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cant Números Pares", "Números Pares", "Diagonal Principal", "Letra C", "Letra H" }));
+        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cant Números Pares", "Números Pares", "Diagonal Principal", "Letra C", "Letra H", "Recorrido 1" }));
         jPanel1.add(cmbOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 130, -1));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Acciones"));
@@ -336,6 +336,9 @@ public class Principal extends javax.swing.JFrame {
                 }
 
                 break;
+                
+            case 5:
+                txtResultado.setText(Helper.recorridoUno(tblMatrizInicial));
         }
 
 

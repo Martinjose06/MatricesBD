@@ -92,35 +92,6 @@ public class Helper {
         return cont;
     }
 
-    public static String recorrido1(JTable tabla1) {
-        int nf, nc, ne, cont =0, i,j;
-        String aux="";
-        int[][] m = pasarDatosMatriz(tabla1);
-        nf = m.length;
-        nc = m[0].length;
-        ne = nf * nc;
-        i = nf-1;
-        j = 0;
-        
-        while(cont < ne){
-           aux=aux+m[i][j];
-            if(j==0 || j%2 == 0){
-                i --;
-            }else{
-                
-                i++;
-            }
-            
-             
-             if(i ==0 || i == nf-1){
-                j++;
-            }
-            
-            cont ++;
-        }
-        
-        return aux;
-    }
 
     public static int[][] pasarDatosMatriz(JTable tabla1) {
         int nf, nc;
@@ -146,6 +117,16 @@ public class Helper {
         }
         return aux;
     }
+    public static String recorridoHaciaArriba(int m[][], int j, int in, int fin){
+        String aux = "";
+        int nf = m.length;
+        for (int i = in; i >= fin;i++) {
+           aux = aux + m[i][j] +" ";
+            
+        }
+        return aux;
+    }
+    
     public static String recorridoHaciaAbajo(int m[][], int j){
         String aux = "";
         int nf = m.length;
@@ -155,11 +136,19 @@ public class Helper {
         }
         return aux;
     }
-    
-    public static String recorridoUno(int[][] m){
-        //int m[][] = pasarDatosMatriz(tabla1);
-       
+    public static String recorridoHaciaAbajo(int m[][], int j, int in, int fin){
+        String aux = "";
         int nf = m.length;
+        for (int i = in; i < fin;i++) {
+           aux = aux + m[i][j] +" ";
+            
+        }
+        return aux;
+    }
+    
+    public static String recorridoUno(JTable tabla){
+        
+        int [][]m = pasarDatosMatriz(tabla);
         int nc = m[0].length;
         String aux="";
         
